@@ -90,7 +90,7 @@ This method produces the following mask with a probability of error of 16.63%.
 
 In parametric approaches, our assumption is that we have an independent
 and identically distributed sample
-$D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ $ We assume the
+$`D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ `$ We assume the
 samples $x_{i}$'s are drawn from some known probability density family,
 $P_{X}$(x; θ), parameterized by the vector θ, for example Gaussian. If we
 assume the density of individual sample, we know the likelihood of the
@@ -111,15 +111,15 @@ Bayesian parameter estimation.
 
 In ML estimation, we search for the value of θ that maximizes the likelihood of the sample. For convenience, we can maximize its log(.) in order to convert the product into a sum and to lead to further computational simplification. Then our classification problem can be summed up by these two equations,
 
-$ i^{*}(x) = \begin{matrix}
+$` i^{*}(x) = \begin{matrix}
 argmax \\
 i \\
-\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right) $
+\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right) `$
 
-$ \theta_{i}^{*} = \begin{matrix}
+$` \theta_{i}^{*} = \begin{matrix}
 argmax \\
 \theta \\
-\end{matrix}P_{T|Y}(D|i,\theta) $
+\end{matrix}P_{T|Y}(D|i,\theta) `$
 
 When we apply ML into our problem, we assume that the class conditional densities are multivariate Gaussians of 64 dimensions. Then under ML assumption, the mean and variance of the Gaussian Distribution can be estimated by the sample mean and variance.
 
@@ -214,7 +214,7 @@ Thus, this is a problem of Expectation Maximization. We must first
 assume the number of Gaussian components present and also the number of
 features (dimensions) that we want to work in. After deciding these
 numbers, we run the EM algorithm on the training data set to find
-${\mu_{c},\Sigma_{c},\pi}_{c}$.. Once the Gaussians are known we use BDR
+${\mu_{c},\Sigma_{c},\pi}_{c}$ . Once the Gaussians are known we use BDR
 to classify the test data. The EM algorithm requires the initial
 parameter estimates to be initialized. In this assignment, we will
 initialize them at random and explore the effect of different
@@ -222,7 +222,7 @@ initializations on the final probability of error. In addition, we also
 look at the effect that the dimensionality of the feature vector has on
 the probability of error.
 
-![](images/media/image11.emf)
+![](images/media/image11.png)
 
 We can observe that the error decreases with the increase in dimensions.
 But also, after a certain value of dimensions it started to increase.
