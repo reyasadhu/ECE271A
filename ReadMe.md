@@ -13,6 +13,7 @@ the image into foreground(cheetah) and background(grass).
 Cheetah | cheetah_mask
 :--------: |:--------:
 ![](/images/media/image1.png) |![](/images/media/image2.png)
+
 The mask on the right is given to check the performance of our model i.e compare our masks to this given mask.
 
 # **Problem Formulation:**
