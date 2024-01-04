@@ -207,7 +207,7 @@ initializations on the final probability of error. In addition, we also
 look at the effect that the dimensionality of the feature vector has on
 the probability of error.
 
-![](images/media/image11.png)
+![](images/media/image11.jpg)
 
 We can observe that the error decreases with the increase in dimensions.
 But also, after a certain value of dimensions it started to increase.
