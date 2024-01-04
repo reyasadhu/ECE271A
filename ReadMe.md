@@ -9,11 +9,7 @@ for detailed explanation.
 
 Given an image of cheetah, we need to create a binary mask to segment
 the image into foreground(cheetah) and background(grass).
-<style>
-td, th {
-   border: none!important;
-}
-</style>
+
 Cheetah | cheetah_mask
 :--------: |:--------:
 ![](/images/media/image1.png) |![](/images/media/image2.png)
@@ -124,24 +120,14 @@ argmax \\
 When we apply ML into our problem, we assume that the class conditional densities are multivariate Gaussians of 64 dimensions. Then under ML assumption, the mean and variance of the Gaussian Distribution can be estimated by the sample mean and variance.
 
 Given the training samples in ***TrainingSamplesDCT_8\_new.mat ,*** we estimate the mean and the variance of the likelihood function $P_{X|Y}\left( x \middle| i \right)$. The prior probability is the same as the previous method, as it was the maximum likelihood estimate. Here, using these estimations we can visualize the feature distribution for all 64 features. The plots will look like these.
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|   |    |
+
 :--------: |:--------:
 ![](/images/media/image5.jpeg) |![](/images/media/image6.jpeg)
 
 Now, the best features for the classification purpose will be where there is a considerable difference between $P_{X|Y}\left( X \middle| cheetah \right)$ and $P_{X|Y}(X|grass)$ for all x's. Except feature 1, all the other features overlap each other with an almost similar mean. So, we choose the distributions based on the spread(variance). By a visual inspection, we choose the best 8 features to be \[1,7,8,9,12,14,18,27\] and the worst 8 features to be \[3,4,5,59,60,62,63,64\].
 
 By keeping the plots side by side , we can clearly see the difference.
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|   |    |
+
 :--------: |:--------:
 ![](/images/media/image7.jpeg) | ![](/images/media/image8.jpeg)
 
@@ -152,12 +138,7 @@ After creating the mask, we can calculate the probability of error.
 With 64 features, P(error) = 8%
 
 With 8 best features, P(error) = 5%
-<style>
-td, th {
-   border: none!important;
-}
-</style>
-|    |  |
+
 :---------------------: |:--------------------:
 ![](/images/media/image9.jpg) | ![](/images/media/image10.jpg)
 
@@ -170,14 +151,14 @@ The main difference between Maximum Likelihood estimation and Bayesian estimatio
 
 For our problem, we assume $P_{x|\theta}(x|\theta)$ to be G(x, µ, Σ). The parameter θ here is only µ because Σ is computed from the sample covariance, which is a plausible tweak to have Σ.
 
-So, $P_{x|\theta}(x|\theta)$ =$P_{x|\theta}(x|µ)$ . In addition, we also assume the prior distribution, $P_{\theta}(\theta) = P_{µ}(µ)$ to be G(µ, $\mu_{0}$, $\Sigma_{0}$). The two parameters, $\mu_{0}$ and $\Sigma_{0}$, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from $\mu_{0}$, $\Sigma_{0}$, Σ.
+So, $`P_{x|\theta}(x|\theta)$ =$P_{x|\theta}(x|µ)`$ . In addition, we also assume the prior distribution, $P_{\theta}(\theta) = P_{µ}(µ)$ to be G(µ, $\mu_{0}$, $\Sigma_{0}$). The two parameters, $\mu_{0}$ and $\Sigma_{0}$, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from $\mu_{0}$, $\Sigma_{0}$, Σ.
 
-Then we can calculate the predictive distribution $P_{x|T}(x|D)$ or $P_{X|i}(x|i,D)$ for each class, which we can then plug into the BDR to get the classification.
+Then we can calculate the predictive distribution $`P_{x|T}(x|D)$ or $P_{X|i}(x|i,D)`$ for each class, which we can then plug into the BDR to get the classification.
 
 $$P_{x|T}\left( x \middle| D \right) = \int_{}^{}{P_{x|\theta}\left( x \middle| \mu \right)P_{\theta|T}\left( \mu \middle| D \right)\ d\mu}$$
 
 For our problem, we have used $\Sigma_{0}$ as a diagonal matrix,
-$ {(\Sigma_{0})}_{ii} = \alpha w_{i} $, with given $\alpha$ and $w\ $
+$` {(\Sigma_{0})}_{ii} = \alpha w_{i} `$, with given $\alpha$ and $w\ $
 and we see the performance of the model by changing the value of $\alpha$. We also use two different strategies for the value of $\mu_{0}$.
 For one strategy, the $\mu_{0}$ is different for the two classes , and for the second strategy its same for both classes. We apply these on four training dataset of different sizes.
 
