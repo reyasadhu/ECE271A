@@ -122,6 +122,7 @@ When we apply ML into our problem, we assume that the class conditional densitie
 
 Given the training samples in ***TrainingSamplesDCT_8\_new.mat ,*** we estimate the mean and the variance of the likelihood function $P_{X|Y}\left( x \middle| i \right)$. The prior probability is the same as the previous method, as it was the maximum likelihood estimate. Here, using these estimations we can visualize the feature distribution for all 64 features. The plots will look like these.
 
+|          |          |
 :--------: |:--------:
 ![](/images/media/image5.jpeg) |![](/images/media/image6.jpeg)
 
@@ -129,6 +130,7 @@ Now, the best features for the classification purpose will be where there is a c
 
 By keeping the plots side by side , we can clearly see the difference.
 
+|          |          |
 :--------: |:--------:
 ![](/images/media/image7.jpeg) | ![](/images/media/image8.jpeg)
 
@@ -140,6 +142,7 @@ With 64 features, P(error) = 8%
 
 With 8 best features, P(error) = 5%
 
+|          |          |
 :---------------------: |:--------------------:
 ![](/images/media/image9.jpg) | ![](/images/media/image10.jpg)
 
