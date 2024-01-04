@@ -87,7 +87,7 @@ This method produces the following mask with a probability of error of 16.63%.
 
 In parametric approaches, our assumption is that we have an independent
 and identically distributed sample
-$$ D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ $$ We assume the
+$` D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ `$ We assume the
 samples $x_{i}$'s are drawn from some known probability density family,
 $P_{X}$(x; θ), parameterized by the vector θ, for example Gaussian. If we
 assume the density of individual sample, we know the likelihood of the
@@ -107,8 +107,6 @@ Bayesian parameter estimation.
 ### 1.  **Maximum Likelihood (ML) Estimation:**
 
 In ML estimation, we search for the value of θ that maximizes the likelihood of the sample. For convenience, we can maximize its log(.) in order to convert the product into a sum and to lead to further computational simplification. Then our classification problem can be summed up by these two equations,
-
-<div style="text-align:center">
  
 $` i^{*}(x) = \begin{matrix}
 argmax \\
@@ -120,11 +118,9 @@ argmax \\
 \theta \\
 \end{matrix}P_{T|Y}(D|i,\theta) `$
 
-</div>
-
 When we apply ML into our problem, we assume that the class conditional densities are multivariate Gaussians of 64 dimensions. Then under ML assumption, the mean and variance of the Gaussian Distribution can be estimated by the sample mean and variance.
 
-Given the training samples in ***TrainingSamplesDCT_8\_new.mat ,*** we estimate the mean and the variance of the likelihood function $P_{X|Y}\left( x \middle| i \right)$. The prior probability is the same as the previous method, as it was the maximum likelihood estimate. Here, using these estimations we can visualize the feature distribution for all 64 features. The plots will look like these.
+Given the training samples in ***TrainingSamplesDCT_8\_new.mat ,*** we estimate the mean and the variance of the likelihood function $`P_{X|Y}\left( x \middle| i \right)`$. The prior probability is the same as the previous method, as it was the maximum likelihood estimate. Here, using these estimations we can visualize the feature distribution for all 64 features. The plots will look like these.
 
 |          |          |
 :--------: |:--------:
@@ -159,9 +155,9 @@ The main difference between Maximum Likelihood estimation and Bayesian estimatio
 
 For our problem, we assume $P_{x|\theta}(x|\theta)$ to be G(x, µ, Σ). The parameter θ here is only µ because Σ is computed from the sample covariance, which is a plausible tweak to have Σ.
 
-So, $`P_{x|\theta}(x|\theta)$ =$P_{x|\theta}(x|µ)`$ . In addition, we also assume the prior distribution, $P_{\theta}(\theta) = P_{µ}(µ)$ to be G(µ, $\mu_{0}$, $\Sigma_{0}$). The two parameters, $\mu_{0}$ and $\Sigma_{0}$, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from $\mu_{0}$, $\Sigma_{0}$, Σ.
+So, $`P_{x|\theta}(x|\theta) = P_{x|\theta}(x|µ)`$ . In addition, we also assume the prior distribution, $P_{\theta}(\theta) = P_{µ}(µ)$ to be G(µ, $\mu_{0}$, $\Sigma_{0}$). The two parameters, $\mu_{0}$ and $\Sigma_{0}$, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from $\mu_{0}$, $\Sigma_{0}$, Σ.
 
-Then we can calculate the predictive distribution $`P_{x|T}(x|D)$ or $P_{X|i}(x|i,D)`$ for each class, which we can then plug into the BDR to get the classification.
+Then we can calculate the predictive distribution $`P_{x|T}(x|D)`$ or $`P_{X|i}(x|i,D)`$ for each class, which we can then plug into the BDR to get the classification.
 
 $$P_{x|T}\left( x \middle| D \right) = \int_{}^{}{P_{x|\theta}\left( x \middle| \mu \right)P_{\theta|T}\left( \mu \middle| D \right)\ d\mu}$$
 
