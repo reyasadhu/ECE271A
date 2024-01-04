@@ -16,7 +16,7 @@ td, th {
 </style>
 Cheetah | cheetah_mask
 :--------: |:--------:
-![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image1.png) |![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image2.png)
+![](/images/media/image1.png) |![](/images/media/image2.png)
 The mask on the right is given to check the performance of our model i.e compare our masks to this given mask.
 
 # **Problem Formulation:**
@@ -77,12 +77,12 @@ Similarly, the class priors, $P_{Y}(i)$ were estimated by dividing the
 number of class examples in the training data with the total number of
 training examples.
 <div style="text-align: center">
-<img src="/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image3.jpeg" width="600" height="300" class="center">
+<img src="/images/media/image3.jpeg" width="600" height="300" class="center">
 </div>
 
 This method produces the following mask with a probability of error of 16.63%.
 <div style="text-align: center">
-<img src="/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image4.jpg" width="350" height= "350" class="center">
+<img src="images/media/image4.jpg" width="350" height= "350" class="center">
 </div>
 
 
@@ -131,7 +131,7 @@ td, th {
 </style>
 |   |    |
 :--------: |:--------:
-![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image5.jpeg) |![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image6.jpeg)
+![](/images/media/image5.jpeg) |![](/images/media/image6.jpeg)
 
 Now, the best features for the classification purpose will be where there is a considerable difference between $P_{X|Y}\left( X \middle| cheetah \right)$ and $P_{X|Y}(X|grass)$ for all x's. Except feature 1, all the other features overlap each other with an almost similar mean. So, we choose the distributions based on the spread(variance). By a visual inspection, we choose the best 8 features to be \[1,7,8,9,12,14,18,27\] and the worst 8 features to be \[3,4,5,59,60,62,63,64\].
 
@@ -143,7 +143,7 @@ td, th {
 </style>
 |   |    |
 :--------: |:--------:
-![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image7.jpeg) | ![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image8.jpeg)
+![](/images/media/image7.jpeg) | ![](/images/media/image8.jpeg)
 
 For the best features, the two conditional distributions are clearly separated from each other, while in the worst features they are overlapping each other. Which means worst features are nearly same for both classes, and thus not reliable for classification purpose.
 
@@ -159,7 +159,7 @@ td, th {
 </style>
 |    |  |
 :---------------------: |:--------------------:
-![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image9.jpg) | ![](/Users/reyasadhu/Downloads/vertopal.com_Readme/images/media/image10.jpg)
+![](/images/media/image9.jpg) | ![](/images/media/image10.jpg)
 
 
 We can see using the 8 best features gives us a better result than using all the 64 features. Its because all the 64 features include those features which have a similar density function and thus cannot distinguish the classes. So, they skew the classification decision and give more error. This is a case of high dimensionality, where we should only consider the useful dimensions rather than all to get a better accuracy.
@@ -222,7 +222,7 @@ initializations on the final probability of error. In addition, we also
 look at the effect that the dimensionality of the feature vector has on
 the probability of error.
 
-![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image11.emf)
+![](images/media/image11.emf)
 
 We can observe that the error decreases with the increase in dimensions.
 But also, after a certain value of dimensions it started to increase.
