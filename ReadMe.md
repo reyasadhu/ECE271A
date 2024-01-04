@@ -87,13 +87,13 @@ This method produces the following mask with a probability of error of 16.63%.
 
 In parametric approaches, our assumption is that we have an independent
 and identically distributed sample
-$`D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ `$ We assume the
+$$ D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ $$ We assume the
 samples $x_{i}$'s are drawn from some known probability density family,
 $P_{X}$(x; θ), parameterized by the vector θ, for example Gaussian. If we
 assume the density of individual sample, we know the likelihood of the
 entire dataset as the samples are i.i.d.
 
-$P_{T}(D;\theta) = \prod_{i = 1}^{N}{P_{X}\left( x_{i};\theta \right)}$
+$$ P_{T}(D;\theta) = \prod_{i = 1}^{N}{P_{X}\left( x_{i};\theta \right)} $$
 
 The main advantage of this method is that if we estimate the parameters
 of the distribution: for example, mean and variance for a Gaussian
@@ -108,15 +108,15 @@ Bayesian parameter estimation.
 
 In ML estimation, we search for the value of θ that maximizes the likelihood of the sample. For convenience, we can maximize its log(.) in order to convert the product into a sum and to lead to further computational simplification. Then our classification problem can be summed up by these two equations,
 
-$` i^{*}(x) = \begin{matrix}
+$$ i^{*}(x) = \begin{matrix}
 argmax \\
 i \\
-\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right) `$
+\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right) $$
 
-$` \theta_{i}^{*} = \begin{matrix}
+$$ \theta_{i}^{*} = \begin{matrix}
 argmax \\
 \theta \\
-\end{matrix}P_{T|Y}(D|i,\theta) `$
+\end{matrix}P_{T|Y}(D|i,\theta) $$
 
 When we apply ML into our problem, we assume that the class conditional densities are multivariate Gaussians of 64 dimensions. Then under ML assumption, the mean and variance of the Gaussian Distribution can be estimated by the sample mean and variance.
 
