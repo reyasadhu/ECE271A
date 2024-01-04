@@ -109,10 +109,10 @@ Bayesian parameter estimation.
 In ML estimation, we search for the value of θ that maximizes the likelihood of the sample. For convenience, we can maximize its log(.) in order to convert the product into a sum and to lead to further computational simplification. Then our classification problem can be summed up by these two equations,
 
 <div style="text-align:center">
-$$ i^{*}(x) = \begin{matrix}
+$` i^{*}(x) = \begin{matrix}
 argmax \\
 i \\
-\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right) $$
+\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right) `$
 
 $$ \theta_{i}^{*} = \begin{matrix}
 argmax \\
